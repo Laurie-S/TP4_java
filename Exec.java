@@ -2,7 +2,7 @@
 public class Exec {
     public static void main(String[] args){
         Etudiant etu = new Etudiant("Dupont","Alice",21);
-     //  etu.ajouterNote(18);
+       // etu.ajouterNote(18);
        // etu.ajouterNote(48);
         
         
@@ -13,7 +13,7 @@ public class Exec {
         	etu.ajouterNote(19);
         } 
         catch (ErreurNotes e){ 
-        	System.out.println("Gestionnaire d’exceptions demandé..."); 
+        	System.out.println(e.recuperMessageErreur()); 
         }
         
         etu.afficherNotes();

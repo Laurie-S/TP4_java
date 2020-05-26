@@ -4,8 +4,8 @@ public class Etudiant {
     private String prenom ;
     private int age ;
     private int [] notes ; // Tableau devant contenir toutes les notes
-    private int nbMatieres = 3; // Nombre maximum de matières
-    private int nbNotes ; // Nombre de notes déjà saisies
+    private int nbMatieres = 3; // Nombre maximum de matiÃ¨res
+    private int nbNotes ; // Nombre de notes dÃ©jÃ  saisies
     
     public Etudiant ( String nom , String prenom , int age){
         this . nom = nom ;
@@ -19,7 +19,7 @@ public class Etudiant {
     
     public void ajouterNote(int note) throws ErreurNotes{ 
     	if ( (nbNotes >= nbMatieres) || ( note < 0 || note > 20) ) throw new 
-    		ErreurNotes(); 
+    		ErreurNotes(nbNotes,nbMatieres,note); 
     	notes[nbNotes] = note; 
     	nbNotes++; 
     }

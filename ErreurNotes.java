@@ -1,10 +1,21 @@
 
-public class ErreurNotes extends Exception{
-	
-		public ErreurNotes(){
-			System.out.println("Vous avez sollicité un gestionnaire d’exceptions ? Je ne suis pas tout à fait prêt, mais je répond quand même");
-			}
-		
-		
-		
+public class ErreurNotes extends Exception {
+    private int nbNotes ;
+    private int nbMatieres ;
+    private int note ;
+    public ErreurNotes (int nbNotes , int nbMatieres , int note ){
+        this . nbNotes = nbNotes ;
+        this . nbMatieres = nbMatieres ;
+        this . note = note ;
+    }
+    public String recuperMessageErreur () {
+        String messageErr = "";
+        if ( nbNotes >= nbMatieres ) {
+            messageErr += " Nombre de notes Ã  saisir supÃ©rieur au nombre de matiÃ¨res .\n";
+        }
+        if ( note < 0 || note > 20 ) {
+            messageErr += "La note saisie doit Ãªtre comprise entre 0 et 20.\n";
+        }
+        return messageErr ;
+    }
 }
